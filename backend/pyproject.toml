@@ -1,7 +1,8 @@
 [project]
-name = "langgraph-app-backend"
+name = "FastAPI-backend"
 version = "0.1.0"
-description = "LangGraph application with Gemini and FireworksAI"
+description = "FastAPI application with Gemini and FireworksAI"
+requires-python = ">=3.12"
 authors = [
     { name = "Leo Walker" }
 ]
@@ -10,19 +11,13 @@ dependencies = [
     "typing-extensions",
     "ipykernel",
     "logfire>=3.5.3",
-    "uvicorn>=0.34.0",
+    "uvicorn[standard]>=0.34.0",
     "gunicorn>=23.0.0",
     "litellm>=1.60.6",
-]
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]
-# Explicitly include the folder that contains your code
-packages = [
-    { include = "app", from = "." }
+    "fastapi>=0.115.8",
+    "python-dotenv>=1.0.1",
+    "sse-starlette>=2.2.1",
+    "hatchling>=1.27.0",
 ]
 
 # Add development dependencies section
@@ -33,3 +28,15 @@ dev = [
     "ruff",
     "mypy"
 ]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/app"]

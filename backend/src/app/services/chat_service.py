@@ -1,6 +1,6 @@
 from typing import AsyncGenerator, List
 import litellm
-from app.models.chat import Message, ChatRequest
+from ..models.chat import Message, ChatRequest
 
 class ChatService:
     """Service to handle chat completions for different models."""
