@@ -1,0 +1,15 @@
+# Python
+__pycache__
+*.pyc
+.env
+.venv
+.git
+.gitignore
+.pytest_cache
+
+# Node/Frontend
+node_modules
+.next
+.cache
+dist
+build 

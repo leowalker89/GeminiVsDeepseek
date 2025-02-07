@@ -1,0 +1,12 @@
+This project is a web application that compares Google Gemini and DeepSeek (FireworksAI) models.
+
+The backend is built with Python and FastAPI.
+
+The frontend is built with React and Next.js.
+
+The database being used will be MongoDB.
+
+The message history and state will be held on the frontend.
+
+Both the front and backend will be containerized using Docker and hosted on HuggingFace Spaces.
+
